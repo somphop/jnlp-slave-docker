@@ -17,3 +17,5 @@ RUN apt-get update -qy && \
     DEBIAN_FRONTEND=noninteractive apt-get install -qy python-pip groff-base && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+USER jenkins
