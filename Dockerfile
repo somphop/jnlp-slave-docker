@@ -1,7 +1,7 @@
 FROM jenkinsci/jnlp-slave:latest
 
-ARG DOCKER_VERSION=19.03.1
-ARG DC_VERSION=19.03.1
+ARG DOCKER_VERSION=docker-ce_18.06.3~ce~3-0~debian
+ARG DC_VERSION=18.06.3
 
 USER root
 
