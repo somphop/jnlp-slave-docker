@@ -9,15 +9,15 @@ RUN curl -sSL https://get.docker.com/ | sh && \
     ./get_helm.sh && \
     rm -f get_helm.sh && \
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
-    chmod 755 kubectl && \
+    chmod 755 kubectl && \    
     mv kubectl /usr/local/bin/kubectl
 
 # Debian packages
 RUN apt-get update -qy && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -qy python-pip groff-base && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -qy python-pip groff-base sudo && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN usermod -aG docker jenkins
+RUN usermod -aG docker jenkins  && adduser docker sudo  && adduser jenkins sudo
 
 USER jenkins
