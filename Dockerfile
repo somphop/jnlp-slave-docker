@@ -18,6 +18,6 @@ RUN apt-get update -qy && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN usermod -aG docker jenkins  && adduser docker sudo  && adduser jenkins sudo
+RUN usermod -aG docker jenkins  && adduser jenkins sudo
 
 USER jenkins
