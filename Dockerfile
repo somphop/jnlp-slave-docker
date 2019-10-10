@@ -21,6 +21,6 @@ RUN apt-get update -qy && \
 RUN usermod -aG docker jenkins  && \
     usermod -a -G sudo jenkins  && \
     adduser jenkins sudo && \
-    echo 'jenkins ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
+    echo 'jenkins ALL=NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo
 
 USER jenkins
